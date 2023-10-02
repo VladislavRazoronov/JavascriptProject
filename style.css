@@ -1,0 +1,90 @@
+#userList{
+    display:flex;
+    flex-wrap: wrap;
+}
+.user{
+    width:45vw;
+    margin:10px;
+    height:30vh;
+    border:solid 2px black;
+    border-radius: 10px;
+    background-color: gray;
+    align-items: center;
+    display: flex;
+    flex-direction:column;
+}
+.user > p{
+    font-size: 1.6em;
+    color:white;
+}
+.userButton{
+    border-radius: 20px;
+    background-color: blue;
+    border:solid 3px darkblue;
+    height:40px;
+}
+body{
+    padding:20px;
+    background-color: gray;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+#userInfo{
+    width: 90vw;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.userProperty{
+    font-size: 1.3em;
+    background-color: gray;
+    border:black dashed 1px;
+    padding:20px;
+    width:30%;
+    color:white;
+}
+#showPosts{
+    border-radius: 20px;
+    background-color: blue;
+    border:solid 3px darkblue;
+    width:90%;
+    height:20vh;
+    font-size: 20px;
+}
+#posts{
+    display: flex;
+    flex-wrap: wrap;
+}
+.post{
+    padding:20px;
+    width:16vw;
+    color:white;
+}
+.post>button{
+    border-radius: 20px;
+    background-color: blue;
+    border:solid 3px darkblue;
+}
+#postInfo{
+    width:90vw;
+    border:solid black 2px;
+    padding:10px;
+    color:white;
+}
+#comments{
+    display: flex;
+    flex-wrap: wrap;
+    padding:20px;
+    justify-content: space-evenly;
+}
+.comment{
+    color:white;
+    width:20vw;
+    border:solid black 2px;
+    margin:10px;
+}
+#commentText{
+    color: white;
+    font-size: 2em;
+}

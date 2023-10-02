@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="postTitle">Post details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="postInfo"></div>
+<div><p id="commentText">Comments:</p></div>
+<div id="comments"></div>
+<script>
+    let url = new URL(location.href);
+    let postID = url.searchParams.get("id");
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postID}`
+    ).then(response => response.json()
+    ).then(postData => {
+        let post = document.getElementById("postInfo");
+        let title = document.createElement("h2");
+        let id = document.getElementById("postTitle");
+        let body = document.createElement("p");
+        title.innerText = postData.title;
+        id.innerText = `Post ${postData.title}`;
+        body.innerText = postData.body;
+        post.append(title,body);
+    })
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postID}/comments`
+    ).then(response => response.json()
+    ).then(commentData => {
+        let comments = document.getElementById("comments");
+        for(let comment of commentData){
+            let commentElement = document.createElement("div");
+            commentElement.classList.add("comment");
+            let title = document.createElement("h3");
+            let body = document.createElement("p");
+            title.innerText = comment.name;
+            body.innerText = comment.body;
+            commentElement.append(title,body);
+            comments.appendChild(commentElement);
+        }
+    })
+</script>
+</body>
+</html>
